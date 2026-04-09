@@ -9,7 +9,6 @@ export class AppService {
     private readonly response: ResponseService,
   ) {}
   getHello() {
-    const test = this.prisma.getTest();
-    return this.response.success(test);
+    return this.response.success('Hello World!');
   }
 }
