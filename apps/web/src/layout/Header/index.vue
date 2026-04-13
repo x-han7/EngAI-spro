@@ -51,7 +51,7 @@ const routes = [
     { path: '/', name: '主页', icon: HomeFilled, isAuth: false },  //不需要登录
     { path: '/chat/index', name: 'AI', icon: MagicStick, isAuth: true },  //需要登录
     { path: '/word-book/index', name: '词库', icon: Notebook, isAuth: false },  //不需要登录
-    { path: '/courses/index', name: '课程', icon: Reading, isAuth: false },  //不需要登录
+    { path: '/course/index', name: '课程', icon: Reading, isAuth: false },  //不需要登录
     { path: '/setting/index', name: '设置', icon: Setting, isAuth: true },  //需要登录
 ]
 const isActive = (path: string) => {
