@@ -6,7 +6,7 @@
     "composite": true,
     "noEmit": true,
     "baseUrl": ".",
-    "types": ["element-plus/global"],
+    "types": ["element-plus/global", "dom-speech-recognition"], //增加dom-speech-recognition类型声明
     "paths": {
       "@/*": ["./src/*"]
     }
