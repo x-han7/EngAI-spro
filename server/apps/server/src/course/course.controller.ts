@@ -1,6 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseGuards, Req } from '@nestjs/common';
 import { CourseService } from './course.service';
-
+import { AuthGuard } from '@libs/shared/auth/auth.guard';
+import type { Request } from 'express';
 @Controller('course')
 export class CourseController {
   constructor(private readonly courseService: CourseService) {}
@@ -8,5 +9,11 @@ export class CourseController {
   @Get('list')
   findAll() {
     return this.courseService.findAll();
+  }
+
+  @UseGuards(AuthGuard)
+  @Get('my')
+  findMy(@Req() req: Request) {
+    return this.courseService.findMy(req.user.userId);
   }
 }
