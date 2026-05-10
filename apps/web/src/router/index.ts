@@ -27,11 +27,11 @@ router.beforeEach((to, from, next) => {
     if (isAuthenticated) {
       next() // 已登录，放行
     } else {
-      // 未登录，重定向到登录页
+      // 未登录，重定向到首页
       // 保存当前想去的路径，登录后跳回来
       ElMessage.warning('请先完成登录')
       next({
-        path: '/', // 假设你的登录页路径是 /login
+        path: '/', 
         query: { redirect: to.fullPath }
       })
     }
